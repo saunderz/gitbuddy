@@ -1,0 +1,8 @@
+{
+  "name": "gitbuddy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ferramenta didática de comandos Git e mensagens de commit, sem dependências ou frameworks.",
+  "scripts": { "test": "node --test tests/*.test.mjs" }
+}
