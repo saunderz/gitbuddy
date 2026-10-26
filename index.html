@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101e2c" />
+    <meta name="description" content="GitBuddy: encontre comandos Git e valide mensagens de commit em um único lugar, sem instalar nada." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/app.js"></script>
+    <title>GitBuddy — Seu assistente Git</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#principal">Ir para o conteúdo principal</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="./" aria-label="GitBuddy — Página inicial">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M10 8v15m0-15 7 7 5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="7" r="3" fill="currentColor"/><circle cx="10" cy="24" r="3" fill="currentColor"/><circle cx="23" cy="9" r="3" fill="currentColor"/></svg>
+            </span>
+            <span class="brand-label">git<span>buddy</span><span class="brand-dot">.</span></span>
+          </a>
+          <div class="header-right"><span class="header-status"><span class="status-dot" aria-hidden="true"></span>100% no navegador</span><span class="header-version">v1.0</span></div>
+        </div>
+      </header>
+
+      <main id="principal">
+        <section class="hero container" aria-labelledby="hero-title">
+          <div class="eyebrow"><span class="eyebrow-line"></span>FERRAMENTA PARA DESENVOLVEDORES <span class="eyebrow-index">/ 001</span></div>
+          <h1 id="hero-title">Menos dúvidas.<br /><span>Mais código.</span></h1>
+          <p class="hero-description">Descubra o comando Git certo para cada situação e escreva mensagens de commit mais organizadas. Tudo em um único lugar.</p>
+          <div class="hero-pills"><span>Sem cadastro</span><span>Sem API</span><span>Gratuito</span></div>
+        </section>
+
+        <section class="workspace container" aria-label="Ferramentas GitBuddy">
+          <div class="workspace-main">
+            <div class="tool-header">
+              <div class="tool-header-top"><span class="section-caption">ESPAÇO DE TRABALHO</span><span class="tool-status"><span aria-hidden="true">●</span> Pronto para usar</span></div>
+              <div class="tabs" role="tablist" aria-label="Selecione uma ferramenta">
+                <button class="tab is-selected" id="tab-command" type="button" role="tab" aria-selected="true" aria-controls="panel-command" tabindex="0" data-tab="command">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="m5 7 5 5-5 5m8 0h6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Comandos Git
+                </button>
+                <button class="tab" id="tab-commit" type="button" role="tab" aria-selected="false" aria-controls="panel-commit" tabindex="-1" data-tab="commit">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M3 12h6m6 0h6M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+                  Validar commit
+                </button>
+              </div>
+            </div>
+            <section class="tool-panel" id="panel-command" role="tabpanel" aria-labelledby="tab-command">
+              <div class="panel-intro"><div class="panel-kicker">01 / EXPLORADOR DE COMANDOS</div><h2>O que você precisa fazer?</h2><p>Descreva a tarefa em português. O GitBuddy encontra um comando correspondente entre as operações cadastradas.</p></div>
+              <form id="form-command" novalidate>
+                <label class="field-label" for="command-query">Sua tarefa no Git</label>
+                <div class="input-wrap"><span class="input-prefix" aria-hidden="true">&gt;</span><input id="command-query" name="command-query" type="text" maxlength="180" autocomplete="off" spellcheck="false" placeholder="Ex.: criar uma nova branch" aria-describedby="command-hint" /></div>
+                <p id="command-hint" class="field-hint">Exemplos: ver alterações, criar branch, enviar commits</p>
+                <button class="primary-button" type="submit">Encontrar comando <span aria-hidden="true">↗</span></button>
+              </form>
+              <div class="example-section"><div class="example-heading">OU EXPERIMENTE UMA AÇÃO</div><div class="example-chips" id="command-examples"><button class="example-chip" data-example="criar uma branch" type="button">Criar branch <span aria-hidden="true">↗</span></button><button class="example-chip" data-example="ver alterações" type="button">Ver alterações <span aria-hidden="true">↗</span></button><button class="example-chip" data-example="consultar histórico" type="button">Histórico <span aria-hidden="true">↗</span></button></div></div>
+              <section class="result-area" aria-label="Resultado da consulta" aria-live="polite" aria-atomic="true" id="command-result"><div class="empty-result"><span class="empty-result-icon" aria-hidden="true">⌘</span><p>Seu resultado aparece aqui</p><span>Digite uma tarefa ou escolha um exemplo acima.</span></div></section>
+            </section>
+            <section class="tool-panel" id="panel-commit" role="tabpanel" aria-labelledby="tab-commit" hidden>
+              <div class="panel-intro"><div class="panel-kicker">02 / VALIDADOR DE COMMITS</div><h2>Seu commit segue o padrão?</h2><p>Verifique se a mensagem segue nossas regras simplificadas de Conventional Commits e entenda cada parte.</p></div>
+              <form id="form-commit" novalidate>
+                <label class="field-label" for="commit-message">Mensagem de commit</label>
+                <div class="input-wrap textarea-wrap"><span class="input-prefix" aria-hidden="true">&gt;</span><textarea id="commit-message" name="commit-message" rows="2" maxlength="180" spellcheck="false" placeholder="Ex.: feat(auth): adiciona login" aria-describedby="commit-hint"></textarea></div>
+                <p id="commit-hint" class="field-hint">Formato: tipo(escopo opcional): descrição</p>
+                <button class="primary-button" type="submit">Validar mensagem <span aria-hidden="true">↗</span></button>
+              </form>
+              <div class="example-section"><div class="example-heading">EXEMPLOS PARA TESTAR</div><div class="example-chips" id="commit-examples"><button class="example-chip" data-example="feat(auth): adiciona login" type="button">Commit válido <span aria-hidden="true">↗</span></button><button class="example-chip" data-example="corrigi o bug" type="button">Commit inválido <span aria-hidden="true">↗</span></button></div></div>
+              <section class="result-area" aria-label="Resultado da validação" aria-live="polite" aria-atomic="true" id="commit-result"><div class="empty-result"><span class="empty-result-icon" aria-hidden="true">✓</span><p>Valide sua primeira mensagem</p><span>O diagnóstico será exibido nesta área.</span></div></section>
+            </section>
+          </div>
+
+          <aside class="sidebar" aria-label="Informações e referências">
+            <div class="sidebar-card dark-card"><span class="aside-eyebrow">GUIA RÁPIDO / 01</span><h2>Git sem<br />mistério<span>.</span></h2><p>Os comandos são sugestões educativas. O GitBuddy nunca executa ações no seu repositório.</p><div class="mini-terminal"><div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div><code><span>$</span> git status<br /><span>✓</span> working tree clean</code></div></div>
+            <div class="sidebar-card reference-card"><div class="reference-top"><span class="aside-eyebrow">REFERÊNCIA / 02</span><span aria-hidden="true">↗</span></div><h3>Conventional Commits</h3><p>Uma convenção para padronizar mensagens e deixar o histórico mais legível.</p><div class="pattern-box"><code><span>feat</span>(auth): adiciona login</code></div><div class="types-grid"><span><b>feat</b> Funcionalidade</span><span><b>fix</b> Correção</span><span><b>docs</b> Documentação</span><span><b>test</b> Testes</span><span><b>refactor</b> Refatoração</span><span><b>chore</b> Manutenção</span></div><a href="https://www.conventionalcommits.org/pt-br/v1.0.0/" target="_blank" rel="noopener noreferrer" class="reference-link">Ver especificação oficial <span aria-hidden="true">↗</span></a></div>
+            <div class="privacy-note"><span aria-hidden="true">◇</span><p><strong>Seus dados ficam aqui.</strong><br />A última consulta é armazenada apenas neste navegador. Nenhuma informação é enviada para servidores externos pelo aplicativo.</p></div>
+          </aside>
+        </section>
+      </main>
+      <footer class="site-footer"><div class="container footer-inner"><span>© 2026 GitBuddy · Projeto acadêmico de Desenvolvimento de Sistemas Web</span><span>Feito com HTML, CSS e JavaScript <span aria-hidden="true">♥</span></span></div></footer>
+    </div>
+  </body>
+</html>
