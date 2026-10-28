@@ -1,4 +1,0 @@
-Antes da entrega, faça uma captura REAL da aba Network do navegador.
-Salve a imagem como docs/rede-network.png e a incorpore ao README.md
-conforme as instruções na seção "Aba Rede".
-Não use um print fictício: a avaliação pede método, URL e status da requisição.

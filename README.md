@@ -55,7 +55,8 @@ gitbuddy/
 │   └── favicon.svg
 ├── tests/
 │   └── logic.test.mjs   # Testes automatizados (Node.js)
-├── docs/                # Adicionar aqui o print da aba Rede
+├── docs/
+│   └── rede-network.png # Print da aba Rede
 ├── package.json         # Executa testes (não instala dependências)
 └── README.md
 ```
@@ -70,21 +71,13 @@ npm test
 
 São cobertos: normalização de consultas, comandos conhecidos, consulta desconhecida, commits válidos/inválidos, campos vazios, múltiplas linhas, comprimento longo e texto que parece HTML. Não é necessário instalar pacotes externos.
 
-## Aba Rede (Network) — evidência obrigatória
+## Aba Rede (Network)
 
-**PENDENTE DE CAPTURA NO NAVEGADOR DO ESTUDANTE.** Para concluir a entrega, siga os passos:
+![Captura da aba Rede com GET, URL e status 200](docs/rede-network.png)
 
-1. Rode a página usando Live Server ou `python -m http.server 8000`.
-2. Pressione **F12**, escolha **Rede (Network)** e recarregue a página com **Ctrl+R**.
-3. Clique na requisição principal (`localhost` ou `index.html`, do tipo *document*) e abra **Cabeçalhos (Headers)**.
-4. Capture uma imagem na qual apareçam **Request Method: GET**, **Request URL** e **Status Code: 200**. Salve o arquivo como `docs/rede-network.png`.
-5. Substitua a linha abaixo pelo Markdown indicado quando a imagem existir no projeto:
+A aba Rede mostra a requisição HTTP feita pelo navegador ao servidor local para carregar o documento principal da aplicação. O método `GET` solicita a página em `http://localhost:8000/` (**Request URL**), e o status `200 OK` confirma que o servidor respondeu com sucesso. Como o GitBuddy é da Trilha C, não existem chamadas a APIs externas: as demais requisições carregam apenas CSS, JavaScript e o ícone do próprio projeto.
 
-`![Captura da aba Rede com GET, URL e status 200](docs/rede-network.png)`
-
-**Explicação para o print (2–3 linhas):** A aba Rede mostra a requisição HTTP feita pelo navegador ao servidor local para carregar o documento principal da aplicação. O método `GET` solicita a página no endereço exibido em **Request URL**, e o status `200 OK` confirma que o servidor respondeu com sucesso. Como o GitBuddy é da Trilha C, não existem chamadas a APIs externas.
-
-> A captura é feita no computador do aluno para mostrar uma requisição real, como exige a atividade; não foi gerada uma imagem simulada.
+**Como reproduzir:** rode `python -m http.server 8000`, abra `http://localhost:8000`, pressione **F12**, escolha **Rede (Network)**, marque **Disable cache** (para ver `200` em vez de `304`), recarregue com **Ctrl+R** e clique na requisição `localhost` do tipo *document*.
 
 ## Segurança e cuidados
 
@@ -113,19 +106,6 @@ O aluno deve conseguir explicar a lógica das funções `findCommand`, `validate
 
 ## Publicação no GitHub e entrega
 
-Crie um repositório **público** chamado `gitbuddy`, publique todos os arquivos, inclua o print de Rede antes da entrega e faça commits descritivos ao longo do desenvolvimento.
+Repositório público: https://github.com/saunderz/gitbuddy
 
-A tarefa no SIGAA solicita o **link público do repositório**, não o envio de um ZIP. Prazo informado: **28/10/2026, 23h59**.
-
-Caso o repositório ainda não tenha sido inicializado:
-
-```bash
-git init
-git add .
-git commit -m "feat: implementa ferramentas GitBuddy"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/gitbuddy.git
-git push -u origin main
-```
-
-Substitua `SEU_USUARIO` por seu usuário real no GitHub. Se já existir um histórico Git local, não execute novamente `git init`/`git commit`: basta configurar o remoto e publicar o histórico existente.
+A entrega da Etapa 2 é o **link público do repositório**, não o envio de um ZIP. Prazo: **28/10/2026, 23h59**.
