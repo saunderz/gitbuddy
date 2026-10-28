@@ -90,13 +90,19 @@ A aba Rede mostra a requisição HTTP feita pelo navegador ao servidor local par
 
 ## Uso de inteligência artificial (declaração)
 
-**Ferramenta:** ChatGPT (OpenAI).
+Foram usadas duas ferramentas de IA, em momentos diferentes do trabalho.
 
-**Para quê foi utilizada:** planejamento da aplicação a partir da proposta GitBuddy, sugestão de interface, geração inicial do HTML/CSS/JavaScript, revisão da lógica, sugestões de testes e elaboração do README.
+**ChatGPT (OpenAI)** — o que foi pedido: planejamento da aplicação a partir da proposta GitBuddy, sugestão de interface, geração inicial do HTML/CSS/JavaScript, revisão da lógica, sugestões de testes e primeira versão deste README.
 
-**O que foi definido/alterado durante o planejamento:** o estudante selecionou a combinação de dois aplicativos originalmente discutidos separadamente (assistente de comandos e validador de commits), com escopo limitado à Trilha C, sem API. **Antes da entrega, registrar aqui as revisões e modificações pessoais que forem efetivamente realizadas no código.** Não declare alterações inexistentes.
+**Claude (Anthropic)** — o que foi pedido: na Etapa 1, apoio na estruturação da proposta e no planejamento das regras; na Etapa 2, conferir o projeto antes da publicação e publicá-lo. Na Etapa 2, executou os 14 testes automatizados, testou as duas abas em um navegador (consultas válidas e desconhecidas, campo vazio, commits válidos e inválidos, entrada com HTML e persistência no `localStorage`), revisou o README, fez a captura da aba Rede incluída acima e publicou o repositório no GitHub.
 
-O aluno deve conseguir explicar a lógica das funções `findCommand`, `validateCommit`, dos eventos de formulário e do armazenamento local.
+**O que foi definido e alterado pelo estudante:**
+
+- Combinou dois aplicativos discutidos separadamente (assistente de comandos e validador de commits) em um só, na Trilha C, sem API.
+- Definiu na proposta da Etapa 1 o limite de até 10 comandos cadastrados, que o catálogo final respeita, e o exemplo `criar uma branch` → `git switch -c minha-branch`.
+- Exigiu que o projeto fosse testado e revisado antes de ser publicado.
+
+O estudante é responsável pelo que foi entregue e deve saber explicar a lógica das funções `findCommand` e `validateCommit`, dos eventos de formulário e do armazenamento local.
 
 ## Referências
 
